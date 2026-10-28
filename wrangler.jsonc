@@ -9,7 +9,7 @@
     "not_found_handling": "404-page"
   },
   "d1_databases": [
-    { "binding": "DB", "database_name": "rayyan-contracting" }
+    { "binding": "DB", "database_name": "rayyan-contracting", "database_id": "f04c18ad-cf83-41de-ae4b-c992cc7f545a" }
   ],
   "observability": { "enabled": true }
 }
