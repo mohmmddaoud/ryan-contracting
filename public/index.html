@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ryan Contracting | Home Improvement &amp; Renovation in Houston, TX</title>
+<meta name="description" content="Painting, flooring, kitchen installation, bathroom renovations, doors &amp; windows and home assembly in Houston, TX. Request a quote from Ryan Contracting.">
+<meta property="og:title" content="Ryan Contracting">
+<meta property="og:description" content="Quality work. Lasting results. Home improvement and renovation in Houston, TX.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rayyancontracting.com/photos/kitchen.jpg">
+<meta name="theme-color" content="#0b0a08">
+<link rel="icon" href="/mark.webp" type="image/webp">
+<link rel="canonical" href="https://rayyancontracting.com/">
+<meta property="og:url" content="https://rayyancontracting.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: photo hero with Ryan → pinned scroll story that walks one home from bare studs to move-in ready → about, services, contact */
+:root{
+  --ink:#0b0a08;
+  --panel:#14110d;
+  --text:#f3ede3;
+  --muted:#b3a894;
+  --gold:#c9a35f;
+  --gold-hi:#e6c88d;
+  --line:rgba(201,163,95,.28);
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ink);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{text-wrap:balance;margin:0}
+h2{font-family:var(--display);font-stretch:115%;font-weight:750;font-size:clamp(30px,4vw,52px);line-height:1.02}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:30;
+  padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:14px;
+  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));
+  display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,10,8,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:38px;height:auto}
+.brand span{font-family:var(--display);font-stretch:125%;font-weight:700;letter-spacing:.14em;font-size:14px;line-height:1.1}
+.brand small{display:block;color:var(--gold);font-weight:500;letter-spacing:.32em;font-size:9.5px}
+.links{display:flex;gap:28px;align-items:center;font-size:14px}
+.links a.l{text-decoration:none;color:var(--muted);transition:color .2s}
+.links a.l:hover{color:var(--text)}
+@media (max-width:820px){.links a.l{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 14px/1 var(--body);letter-spacing:.04em;text-decoration:none;
+  padding:14px 20px;border-radius:2px;border:1px solid var(--gold);cursor:pointer;transition:background .2s,color .2s}
+.btn.solid{background:var(--gold);color:#120f0a}
+.btn.solid:hover{background:var(--gold-hi)}
+.btn.ghost{background:rgba(11,10,8,.35);color:var(--text)}
+.btn.ghost:hover{background:rgba(201,163,95,.14)}
+.btn.sm{padding:10px 14px;font-size:13px}
+.btn svg{width:16px;height:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero .bg{position:absolute;inset:0;z-index:-2;background:var(--panel)}
+.hero .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.55)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(11,10,8,.92) 0%,rgba(11,10,8,.6) 45%,rgba(11,10,8,.15) 75%),linear-gradient(0deg,var(--ink) 0%,rgba(11,10,8,0) 35%)}
+.hero .wrap{width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:end;gap:24px}
+.hero .copy{display:grid;gap:22px;padding-block:140px 90px;max-width:600px}
+.hero .logo{width:200px;max-width:55%}
+h1{font-family:var(--display);font-stretch:118%;font-weight:800;font-size:clamp(40px,6.2vw,80px);line-height:.98;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--gold)}
+.lede{font-size:clamp(16px,1.6vw,19px);color:#ddd4c6;max-width:46ch;margin:0}
+.ryan{align-self:end;justify-self:end;width:100%;max-width:470px;position:relative}
+.ryan::before{content:"";position:absolute;left:50%;bottom:4%;width:90%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(201,163,95,.38),rgba(201,163,95,0) 68%)}
+.ryan img{position:relative;width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.scrollhint{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.scrollhint i{display:block;width:1px;height:28px;background:linear-gradient(var(--gold),transparent)}
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .ryan{position:absolute;right:-30px;bottom:0;width:62%;max-width:300px;opacity:.55;z-index:-1}
+  .hero .copy{padding-block:120px 64px}
+  .hero .logo{width:140px}
+}
+
+/* scroll story */
+.story{position:relative;height:calc(var(--n) * 85svh)}
+.stick{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--panel)}
+.frames{position:absolute;inset:0;z-index:0;isolation:isolate}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.stick.webgl .frames{display:none}
+.ryan img{transition:transform .2s linear}
+.frame{position:absolute;inset:0;opacity:0;will-change:opacity,transform}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame:first-child{opacity:1}
+.stick::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(11,10,8,.92) 0%,rgba(11,10,8,.72) 30%,rgba(11,10,8,.15) 60%,rgba(11,10,8,0) 75%),linear-gradient(0deg,rgba(11,10,8,.7),rgba(11,10,8,0) 32%),linear-gradient(180deg,rgba(11,10,8,.55),rgba(11,10,8,0) 22%)}
+.captions{position:absolute;z-index:2;left:0;right:0;bottom:0;top:0;pointer-events:none}
+.captions .wrap{height:100%;position:relative}
+.cap{position:absolute;left:max(24px,env(safe-area-inset-left,0px));right:max(24px,env(safe-area-inset-right,0px));bottom:110px;max-width:470px;
+  display:grid;gap:14px;opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.cap.on{opacity:1;transform:none}
+.cap .num{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:clamp(56px,8vw,110px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--gold)}
+.cap h3{font-family:var(--display);font-stretch:115%;font-weight:750;font-size:clamp(28px,3.6vw,46px);line-height:1}
+.cap p{margin:0;color:#ddd4c6;max-width:42ch}
+.cap .tag{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#120f0a;background:var(--gold);padding:5px 9px;border-radius:2px}
+.rail{position:absolute;z-index:3;right:max(24px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);display:grid;gap:10px;justify-items:end}
+.rail button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,237,227,.5);transition:color .3s;padding:2px 0}
+.rail button span{opacity:0;transform:translateX(6px);transition:opacity .3s,transform .3s;white-space:nowrap}
+.rail button i{display:block;width:18px;height:2px;background:currentColor;transition:width .3s}
+.rail button.on{color:var(--gold-hi)}
+.rail button.on span,.rail button:hover span{opacity:1;transform:none}
+.rail button.on i{width:34px}
+.rail button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:4px}
+.prog{position:absolute;z-index:3;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
+.prog i{display:block;height:100%;width:0;background:var(--gold)}
+.storyhead{position:absolute;z-index:3;top:calc(env(safe-area-inset-top,0px) + 92px);left:max(24px,env(safe-area-inset-left,0px))}
+.credit{position:absolute;z-index:3;right:max(24px,env(safe-area-inset-right,0px));bottom:14px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(243,237,227,.45)}
+@media (max-width:820px){
+  .stick::after{background:linear-gradient(0deg,rgba(11,10,8,.96) 0%,rgba(11,10,8,.82) 40%,rgba(11,10,8,0) 68%),linear-gradient(180deg,rgba(11,10,8,.5),rgba(11,10,8,0) 20%)}
+  .cap{bottom:64px}
+  .rail{top:auto;bottom:auto;top:calc(env(safe-area-inset-top,0px) + 86px);transform:none;grid-auto-flow:column;gap:6px;right:max(16px,env(safe-area-inset-right,0px))}
+  .rail button span{display:none}
+  .rail button i{width:12px}
+  .rail button.on i{width:24px}
+  .storyhead{display:none}
+}
+
+/* sections */
+section.block{padding-block:110px}
+.head{display:grid;gap:14px;max-width:640px;margin-bottom:44px}
+.head p{color:var(--muted);margin:0;max-width:52ch}
+
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.about p{margin:0 0 16px;color:#d8cfc0;max-width:52ch}
+.vals{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.vals li{display:flex;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+.vals b{font-family:var(--mono);font-weight:500;color:var(--gold);font-size:12px;letter-spacing:.1em;min-width:28px}
+@media (max-width:820px){.about{grid-template-columns:1fr;gap:28px}}
+
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:900px){.svcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.svcs{grid-template-columns:1fr}}
+.svc{background:var(--panel);display:grid;grid-template-rows:auto 1fr;min-width:0;text-decoration:none;transition:background .25s}
+.svc:hover{background:#1b1712}
+.svc .ph{aspect-ratio:16/10;overflow:hidden;max-width:100%}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:saturate(.9)}
+.svc:hover .ph img{transform:scale(1.04)}
+.svc .tx{padding:22px 24px 26px;display:grid;gap:8px;align-content:start}
+.svc h3{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:18px;letter-spacing:.03em;text-transform:uppercase}
+.svc p{margin:0;color:var(--muted);font-size:15px}
+
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+.contact > div{background:var(--panel);padding:40px;min-width:0}
+@media (max-width:600px){.contact > div{padding:28px 22px}}
+.phone{font-family:var(--display);font-stretch:110%;font-weight:800;font-size:clamp(34px,5vw,58px);line-height:1;color:var(--gold-hi);margin:14px 0 22px;font-variant-numeric:tabular-nums;user-select:all}
+.row{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row svg{width:20px;height:20px;color:var(--gold)}
+.row .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block}
+.row .v{overflow-wrap:anywhere;user-select:all}
+.mini{background:none;border:1px solid var(--line);color:var(--muted);font:500 12px var(--mono);padding:7px 10px;border-radius:2px;cursor:pointer;text-decoration:none}
+.mini:hover{color:var(--text);border-color:var(--gold)}
+
+footer{padding-block:40px 60px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--line);padding-top:28px;color:var(--muted);font-size:13px}
+.slogan{font-family:var(--display);font-stretch:125%;font-weight:600;letter-spacing:.24em;color:var(--gold);font-size:12px;text-transform:uppercase}
+
+/* quote request dialog */
+.svcbtn{justify-self:start;margin-top:6px;background:none;border:0;padding:6px 0;color:var(--gold);font:600 14px var(--body);letter-spacing:.03em;cursor:pointer;border-bottom:1px solid transparent}
+.svcbtn:hover{border-color:var(--gold)}
+dialog.quote{width:min(620px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--text);overflow:auto}
+dialog.quote::backdrop{background:rgba(5,4,3,.78);backdrop-filter:blur(4px)}
+.qhead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:26px 28px 6px}
+.qhead h2{font-size:clamp(26px,4vw,34px)}
+.qclose{background:none;border:1px solid var(--line);color:var(--muted);width:38px;height:38px;border-radius:2px;font-size:20px;line-height:1;cursor:pointer;flex:none}
+.qclose:hover{color:var(--text);border-color:var(--gold)}
+.qform{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px 28px 28px}
+.qform .full{grid-column:1/-1}
+@media (max-width:560px){.qform{grid-template-columns:1fr;padding:12px 20px 24px}.qhead{padding:22px 20px 4px}}
+.f{display:grid;gap:6px;min-width:0}
+.f > label,.f legend{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.f input,.f select,.f textarea{width:100%;background:#0f0d0a;border:1px solid rgba(201,163,95,.28);border-radius:2px;color:var(--text);font:400 16px var(--body);padding:12px 13px;outline:none}
+.f textarea{min-height:110px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,163,95,.18)}
+.f fieldset{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.f fieldset legend{margin-bottom:6px;width:100%}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.chip span{display:inline-block;padding:9px 14px;border:1px solid var(--line);border-radius:2px;font-size:14px;color:var(--muted)}
+.chip input:checked+span{border-color:var(--gold);color:#120f0a;background:var(--gold)}
+.chip input:focus-visible+span{outline:2px solid var(--gold-hi);outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.qerr{color:#ffb4a0;font-size:14px;margin:0}
+.qfoot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.qfoot small{color:var(--muted);font-size:13px}
+.qdone{padding:12px 28px 32px;display:grid;gap:14px}
+.qdone .tick{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;color:var(--gold)}
+.qdone p{margin:0;color:#d8cfc0}
+.btn[disabled]{opacity:.6;cursor:wait}
+
+/* hamburger menu */
+.navr{display:flex;align-items:center;gap:12px}
+.burger{width:46px;height:46px;border:1px solid var(--line);background:rgba(11,10,8,.45);border-radius:2px;display:grid;place-content:center;gap:6px;cursor:pointer;padding:0}
+.burger span{display:block;width:20px;height:2px;background:var(--text);transition:transform .3s,opacity .3s}
+.burger:hover{border-color:var(--gold)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media (max-width:560px){.callbtn .num{display:none}.callbtn{padding:13px}}
+.menu{position:fixed;inset:0;z-index:29;background:rgba(8,7,5,.97);backdrop-filter:blur(8px);overflow:auto;
+  padding-top:calc(env(safe-area-inset-top,0px) + 96px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 32px)}
+.menu-in{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end;min-height:calc(100% - 20px)}
+@media (max-width:820px){.menu-in{grid-template-columns:1fr;gap:32px;align-items:start}}
+.menu-links{display:grid;gap:4px}
+.menu-links a{font-family:var(--display);font-stretch:118%;font-weight:750;font-size:clamp(38px,7vw,84px);line-height:1.05;text-decoration:none;color:var(--text);display:flex;align-items:baseline;gap:18px;transition:color .2s,transform .25s}
+.menu-links a small{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.menu-links a:hover{color:var(--gold);transform:translateX(6px)}
+.menu-side{display:grid;gap:22px;border-left:1px solid var(--line);padding-left:32px}
+@media (max-width:820px){.menu-side{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}}
+.menu-side .k{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.menu-side .v{font-size:17px;user-select:all;overflow-wrap:anywhere}
+.menu-side .v.big{font-family:var(--display);font-stretch:110%;font-weight:800;font-size:28px;color:var(--gold-hi)}
+.menu.open .menu-links a{animation:mIn .5s cubic-bezier(.2,.7,.2,1) both}
+.menu.open .menu-links a:nth-child(2){animation-delay:.04s}.menu.open .menu-links a:nth-child(3){animation-delay:.08s}
+.menu.open .menu-links a:nth-child(4){animation-delay:.12s}.menu.open .menu-links a:nth-child(5){animation-delay:.16s}
+@keyframes mIn{from{transform:translateY(18px)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.menu.open .menu-links a{animation:none}}
+body.menu-open{overflow:hidden}
+.toast{position:fixed;left:50%;top:calc(80px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:40;background:var(--gold);color:#120f0a;font:600 13px var(--body);padding:10px 16px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Ryan Contracting home">
+    <img src="/mark.webp" alt="">
+    <span>RYAN<small>CONTRACTING</small></span>
+  </a>
+  <div class="navr">
+    <a class="btn solid sm callbtn" href="tel:+12812827982" aria-label="Call (281) 282-7982">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="num">(281) 282-7982</span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="menu" id="menu" hidden>
+  <div class="menu-in">
+    <nav class="menu-links" aria-label="Site">
+      <a href="#top" data-m>Home</a>
+      <a href="#build" data-m>The build <small>Room by room</small></a>
+      <a href="#services" data-m>Services <small>Six trades</small></a>
+      <a href="#about" data-m>About us</a>
+      <a href="#contact" data-m>Contact</a>
+    </nav>
+    <div class="menu-side">
+      <button class="btn solid" type="button" data-quote data-m style="justify-self:start">Get a quote</button>
+      <div><span class="k">Call or text</span><span class="v big">(281) 282-7982</span></div>
+      <div><span class="k">Email</span><span class="v">ryancontracting47@gmail.com</span></div>
+      <div><span class="k">Instagram</span><a class="v" href="https://www.instagram.com/ryancontracting/" target="_blank" rel="noopener">@ryancontracting</a></div>
+      <div><span class="k">Based in</span><span class="v">Houston, TX</span></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  function set(open){m.hidden=!open;m.classList.toggle('open',open);b.setAttribute('aria-expanded',open);b.setAttribute('aria-label',open?'Close menu':'Open menu');document.body.classList.toggle('menu-open',open);document.getElementById('nav').classList.toggle('solid',open||scrollY>40);}
+  b.addEventListener('click',()=>set(m.hidden));
+  m.querySelectorAll('[data-m]').forEach(a=>a.addEventListener('click',()=>set(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)set(false);});
+})();
+</script>
+
+<main id="top">
+  <section class="hero">
+    <div class="bg"><img src="/photos/framing.jpg" alt="" fetchpriority="high"></div>
+    <div class="wrap">
+      <div class="copy">
+        <img class="logo" src="/logo.webp" alt="Ryan Contracting logo">
+        <div class="eyebrow">Houston, TX · Home improvement &amp; renovation</div>
+        <h1>Quality work.<br><em>Lasting results.</em></h1>
+        <p class="lede">From bare studs to move-in ready. Painting, flooring, kitchens, bathrooms, doors and windows, done right the first time.</p>
+        <div class="cta">
+          <button class="btn solid" type="button" data-quote>Get a quote</button>
+          <a class="btn ghost" href="#build">Watch the build</a>
+        </div>
+        <div class="scrollhint"><i></i>Scroll to walk through a home, room by room</div>
+      </div>
+      <div class="ryan"><img src="/ryan.webp" alt="Ryan, owner of Ryan Contracting"></div>
+    </div>
+  </section>
+
+  <section class="story" id="build" aria-label="How a home comes together, stage by stage">
+    <div class="stick">
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="frames" id="frames"></div>
+      <div class="storyhead eyebrow">Inside the build</div>
+      <div class="captions" id="caps"></div>
+      <nav class="rail" id="rail" aria-label="Build stages"></nav>
+      <div class="credit">Stage photos: Unsplash</div>
+      <div class="prog"><i id="prog"></i></div>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Our services</div>
+        <h2>Six trades. One crew you can trust.</h2>
+        <p>One room or the whole house, every job gets proper prep, clean execution and a careful final walkthrough.</p>
+      </div>
+      <div class="svcs">
+        <article class="svc"><div class="ph"><img src="/photos/paint.jpg" alt="Paint roller applying a fresh coat to a wall" loading="lazy"></div><div class="tx"><h3>Painting</h3><p>Interior and exterior painting with careful prep, sharp lines and a clean site when we leave.</p><button class="svcbtn" type="button" data-quote data-service="Painting">Get a quote <span aria-hidden="true">&rarr;</span></button></div></article>
+        <article class="svc"><div class="ph"><img src="/photos/floor.jpg" alt="Installer laying new plank flooring" loading="lazy"></div><div class="tx"><h3>Flooring</h3><p>New floors installed level and tight, with transitions and trim finished to last.</p><button class="svcbtn" type="button" data-quote data-service="Flooring">Get a quote <span aria-hidden="true">&rarr;</span></button></div></article>
+        <article class="svc"><div class="ph"><img src="/photos/kitchen.jpg" alt="Dark wood kitchen cabinets with brass pulls and mosaic backsplash" loading="lazy"></div><div class="tx"><h3>Kitchen Installation</h3><p>Cabinets, countertops, backsplash and fixtures fitted square and installed properly.</p><button class="svcbtn" type="button" data-quote data-service="Kitchen Installation">Get a quote <span aria-hidden="true">&rarr;</span></button></div></article>
+        <article class="svc"><div class="ph"><img src="/photos/bath.jpg" alt="Renovated bathroom with tiled walls, freestanding tub and brass fixtures" loading="lazy"></div><div class="tx"><h3>Bathroom Renovations</h3><p>Full remodels or targeted upgrades: showers, tile, vanities, lighting and fixtures.</p><button class="svcbtn" type="button" data-quote data-service="Bathroom Renovations">Get a quote <span aria-hidden="true">&rarr;</span></button></div></article>
+        <article class="svc"><div class="ph"><img src="/photos/windows.jpg" alt="Room with new floor-to-ceiling black-framed windows" loading="lazy"></div><div class="tx"><h3>Door &amp; Windows</h3><p>Replacement and new installs that open smoothly, close tight and keep the weather out.</p><button class="svcbtn" type="button" data-quote data-service="Door &amp; Windows">Get a quote <span aria-hidden="true">&rarr;</span></button></div></article>
+        <article class="svc"><div class="ph"><img src="/photos/cabinets.jpg" alt="Installer mounting a cabinet with a drill" loading="lazy"></div><div class="tx"><h3>Home Assembly</h3><p>Furniture, shelving, TVs and fixtures assembled, leveled and mounted securely.</p><button class="svcbtn" type="button" data-quote data-service="Home Assembly Services">Get a quote <span aria-hidden="true">&rarr;</span></button></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about" style="padding-top:0">
+    <div class="wrap">
+      <div class="about">
+        <div class="head" style="margin:0">
+          <div class="eyebrow">About us</div>
+          <h2>Hi, I'm Ryan.</h2>
+        </div>
+        <div>
+          <p>Ryan Contracting is a home improvement company based in Houston, Texas. I treat every home like my own: show up when I say I will, keep you in the loop, and finish the job properly.</p>
+          <p>Big renovation or small repair, you get the same standard of work.</p>
+          <ul class="vals">
+            <li><b>01</b><span>A clear quote before any work starts</span></li>
+            <li><b>02</b><span>Respect for your home, your time and your budget</span></li>
+            <li><b>03</b><span>Finishes built to last for years</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Start your project</div>
+        <h2>Tell us what you're planning.</h2>
+        <p>Send your project details online, or call or text. Ryan reviews every request personally and gets back to you with next steps.</p>
+      </div>
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Call or text</div>
+          <div class="phone">(281) 282-7982</div>
+          <div class="cta">
+            <button class="btn solid" type="button" data-quote>Request a quote online</button>
+            <a class="btn ghost" href="tel:+12812827982">Call now</a>
+            <a class="btn ghost" href="sms:+12812827982">Send a text</a>
+            <button class="btn ghost" type="button" data-copy="(281) 282-7982">Copy number</button>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg>
+            <div><span class="k">Email</span><span class="v">ryancontracting47@gmail.com</span></div>
+            <button class="mini" type="button" data-copy="ryancontracting47@gmail.com">Copy</button>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg>
+            <div><span class="k">Instagram</span><span class="v">@ryancontracting</span></div>
+            <a class="mini" href="https://www.instagram.com/ryancontracting/" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><span class="k">Based in</span><span class="v">Houston, TX</span></div>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <span class="slogan">Built on trust. Delivered with care.</span>
+        <span>© 2026 Ryan Contracting · Houston, Texas</span>
+      </div>
+    </div>
+  </footer>
+</main>
+<div class="toast" id="toast" hidden>Copied</div>
+
+<script src="/three.min.js"></script>
+<script>
+(function(){
+const stages=[
+  {img:'framing',t:'Framing',p:'Every project starts with what is behind the walls. Studs set plumb, square and on spacing so everything after it lines up.',tag:'Structure'},
+  {img:'walls',t:'Drywall & ceilings',p:'Boards hung, seams taped and mudded, then sanded smooth so the finish coat has nothing to hide.',tag:'Walls'},
+  {img:'paint',t:'Painting',p:'Primer, then two clean coats. Cut lines are sharp, coverage is even and the floors stay protected.',tag:'Painting'},
+  {img:'floor',t:'Flooring',p:'Subfloor checked flat, then plank or tile laid tight with clean transitions between rooms.',tag:'Flooring'},
+  {img:'windows',t:'Doors & windows',p:'Openings squared, units set level and sealed so they operate smoothly and keep the weather out.',tag:'Door & Windows'},
+  {img:'cabinets',t:'Cabinet install',p:'Boxes leveled and fastened to the studs, doors adjusted until every gap is even.',tag:'Kitchen'},
+  {img:'kitchen',t:'Kitchen finished',p:'Countertops, backsplash, hardware and fixtures in. A kitchen built to be used every day.',tag:'Kitchen'},
+  {img:'tile',t:'Tile work',p:'Thinset troweled, tiles spaced and set level, grout lines straight from corner to corner.',tag:'Bathroom'},
+  {img:'bath',t:'Bathroom finished',p:'Vanity, tub, lighting and trim. The room comes together and is ready for its first morning.',tag:'Bathroom'},
+  {img:'done',t:'Move-in ready',p:'Final walkthrough with you, punch list closed, site cleaned. Welcome home.',tag:'Complete'}
+];
+const N=stages.length;
+const story=document.getElementById('build');
+story.style.setProperty('--n',N+1);
+const frames=document.getElementById('frames'),caps=document.getElementById('caps'),rail=document.getElementById('rail'),prog=document.getElementById('prog');
+const fEls=[],cEls=[],rEls=[];
+stages.forEach((s,i)=>{
+  const f=document.createElement('div');f.className='frame';
+  f.innerHTML=`<img src="/photos/${s.img}.jpg" alt="${s.t}" ${i>1?'loading="lazy"':''} decoding="async">`;
+  frames.appendChild(f);fEls.push(f);
+  const c=document.createElement('div');c.className='cap'+(i===0?' on':'');
+  c.innerHTML=`<div class="num">${String(i+1).padStart(2,'0')}</div><span class="tag">${s.tag}</span><h3>${s.t}</h3><p>${s.p}</p>`;
+  caps.appendChild(c);cEls.push(c);
+  const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${String(i+1).padStart(2,'0')} ${s.t}</span><i></i>`;
+  b.setAttribute('aria-label','Stage '+(i+1)+': '+s.t);
+  b.addEventListener('click',()=>{const top=story.offsetTop+(story.offsetHeight-innerHeight)*(i/(N-1));scrollTo({top,behavior:reduce?'auto':'smooth'});});
+  rail.appendChild(b);rEls.push(b);
+});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let active=-1,storyF=0;
+function ss(a,b,x){x=Math.min(1,Math.max(0,(x-a)/(b-a)));return x*x*(3-2*x);}
+function update(){
+  const range=story.offsetHeight-innerHeight;
+  const p=range>0?Math.min(1,Math.max(0,(scrollY-story.offsetTop)/range)):0;
+  const f=p*(N-1);storyF=f;const cur=Math.min(N-1,Math.floor(f));const frac=f-cur;
+  const mix=ss(.55,.95,frac);
+  fEls.forEach((el,j)=>{
+    let o=0;
+    if(j===cur)o=1;else if(j===cur+1)o=mix;
+    el.style.opacity=o;el.style.zIndex=j===cur+1?2:1;
+    if(!reduce&&o>0){const local=j===cur?frac:0;el.style.transform=`scale(${1.08-.06*local})`;}
+  });
+  const show=Math.min(N-1,frac>.72?cur+1:cur);
+  if(show!==active){active=show;cEls.forEach((c,j)=>c.classList.toggle('on',j===show));rEls.forEach((r,j)=>r.classList.toggle('on',j===show));}
+  prog.style.width=(p*100)+'%';
+}
+let ticking=false;
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{update();ticking=false;});}document.getElementById('nav').classList.toggle('solid',scrollY>40);},{passive:true});
+addEventListener('resize',update);
+update();
+
+/* ---------- 3D walk-through: photos hung as doorways in a framed hallway ---------- */
+(function initGL(){
+  if(!window.THREE)return;
+  const canvas=document.getElementById('gl');const stick=canvas.parentElement;
+  let r;try{r=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(e){return;}
+  if(!r.getContext())return;
+  stick.classList.add('webgl');
+  const small=Math.min(innerWidth,innerHeight)<700;
+  r.setPixelRatio(Math.min(devicePixelRatio||1,small?1.5:1.75));
+  r.outputEncoding=THREE.sRGBEncoding;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.15;
+  const scene=new THREE.Scene();const BG=0x0b0a08;scene.background=new THREE.Color(BG);
+  const D=14,L=6,FOV=50;
+  scene.fog=new THREE.Fog(BG,L+2,L+D*2.1);
+  const cam=new THREE.PerspectiveCamera(FOV,1,.05,200);
+  const aniso=r.capabilities.getMaxAnisotropy();
+
+  function cnv(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;draw(c.getContext('2d'),w,h);const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=aniso;t.wrapS=t.wrapT=THREE.RepeatWrapping;return t;}
+  const R=(a,b)=>a+Math.random()*(b-a);
+  const woodT=cnv(64,512,(g,w,h)=>{g.fillStyle='#cfa978';g.fillRect(0,0,w,h);for(let i=0;i<46;i++){g.strokeStyle=`rgba(${R(110,160)|0},${R(70,100)|0},${R(35,55)|0},${R(.12,.38)})`;g.lineWidth=R(.5,2.2);g.beginPath();let x=R(0,w);for(let y=0;y<=h;y+=16){x+=R(-1.2,1.2);y?g.lineTo(x,y):g.moveTo(x,y);}g.stroke();}});
+  const osbT=cnv(512,512,(g,w,h)=>{g.fillStyle='#9c7a4a';g.fillRect(0,0,w,h);for(let i=0;i<2600;i++){g.save();g.translate(R(0,w),R(0,h));g.rotate(R(0,Math.PI));const l=R(.6,.95);g.fillStyle=`rgb(${(R(140,205)*l)|0},${(R(100,155)*l)|0},${(R(55,95)*l)|0})`;g.fillRect(-R(8,22),-R(2,5),R(16,44),R(4,10));g.restore();}});
+  const wood=new THREE.MeshStandardMaterial({map:woodT,roughness:.85});
+  const osb=new THREE.MeshStandardMaterial({map:osbT,roughness:.95});
+  const gold=new THREE.MeshStandardMaterial({color:0xc9a35f,roughness:.35,metalness:.85,emissive:0x2a1d08});
+  const glow=new THREE.MeshBasicMaterial({color:0xffd08a});
+
+  scene.add(new THREE.HemisphereLight(0xffe2b8,0x1a120a,.55));
+  const lamp=new THREE.PointLight(0xffc98a,1.6,26,1.6);scene.add(lamp);
+
+  // photos
+  const loader=new THREE.TextureLoader();const pgeo=new THREE.PlaneGeometry(1,1);
+  // each photo is a door: hinged on its left edge, it swings open into the next room
+  const planes=stages.map((s,i)=>{
+    const t=loader.load('/photos/'+s.img+'.jpg');t.encoding=THREE.sRGBEncoding;t.anisotropy=aniso;
+    const door=new THREE.Group();door.position.z=-i*D;scene.add(door);
+    const face=new THREE.Mesh(pgeo,new THREE.MeshBasicMaterial({map:t}));door.add(face);
+    const backside=new THREE.Mesh(pgeo,osb);backside.rotation.y=Math.PI;backside.position.z=-.02;door.add(backside);
+    door.userData={face,backside};return door;
+  });
+  // hallway built to the current photo size
+  let hall=null,PW=8,PH=5;
+  const box=new THREE.BoxGeometry(1,1,1);
+  function buildHall(){
+    if(hall){scene.remove(hall);hall.traverse(o=>{if(o.isInstancedMesh)o.dispose&&o.dispose();});}
+    hall=new THREE.Group();scene.add(hall);
+    const hw=PW/2+1.4,floorY=-PH/2-.02,ceilY=PH/2+1.1,z0=L+6,z1=-(N-1)*D-8,len=z0-z1;
+    const fl=new THREE.Mesh(new THREE.PlaneGeometry(hw*2+.6,len),osb);fl.rotation.x=-Math.PI/2;fl.position.set(0,floorY,(z0+z1)/2);
+    osbT.repeat.set((hw*2)/2,len/4);hall.add(fl);
+    const step=16/12,count=Math.ceil(len/step);
+    const studs=new THREE.InstancedMesh(box,wood,count*2);const joists=new THREE.InstancedMesh(box,wood,count);
+    const m4=new THREE.Matrix4(),q=new THREE.Quaternion(),qz=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,0,1),Math.PI/2);
+    const sh=ceilY-floorY;
+    for(let k=0;k<count;k++){const z=z0-k*step;
+      [-1,1].forEach((sd,j)=>{m4.compose(new THREE.Vector3(sd*hw,floorY+sh/2,z),q,new THREE.Vector3(.29,sh,.125));studs.setMatrixAt(k*2+j,m4);});
+      m4.compose(new THREE.Vector3(0,ceilY,z),qz,new THREE.Vector3(.6,hw*2+.4,.125));joists.setMatrixAt(k,m4);}
+    [studs,joists].forEach(o=>{o.frustumCulled=false;hall.add(o);});
+    [-1,1].forEach(sd=>{[floorY+.06,ceilY-.3].forEach(y=>{const p=new THREE.Mesh(box,wood);p.scale.set(.29,.125,len);p.rotation.set(0,0,0);p.position.set(sd*hw,y,(z0+z1)/2);hall.add(p);});});
+    // gold door casing and a work light at every photo
+    planes.forEach((pl,i)=>{
+      const z=-i*D,t=.16,d=.34;
+      [[-PW/2-t/2,0,t,PH+t*2],[PW/2+t/2,0,t,PH+t*2],[0,PH/2+t/2,PW+t*2,t]].forEach(([x,y,w,h])=>{const b=new THREE.Mesh(box,gold);b.scale.set(w,h,d);b.position.set(x,y,z);hall.add(b);});
+      const bulb=new THREE.Mesh(new THREE.SphereGeometry(.14,16,12),glow);bulb.position.set(0,ceilY-1.25,z+2.6);hall.add(bulb);
+      const cord=new THREE.Mesh(box,new THREE.MeshBasicMaterial({color:0x111111}));cord.scale.set(.02,1.1,.02);cord.position.set(0,ceilY-.62,z+2.6);hall.add(cord);
+    });
+    const back=new THREE.Mesh(new THREE.PlaneGeometry(hw*2,sh),new THREE.MeshBasicMaterial({color:BG}));back.position.set(0,floorY+sh/2,z1);hall.add(back);
+  }
+
+  // drifting sawdust
+  const PN=small?260:520,pos=new Float32Array(PN*3);
+  for(let i=0;i<PN;i++){pos[i*3]=R(-6,6);pos[i*3+1]=R(-3,4);pos[i*3+2]=R(-(N-1)*D-4,L+2);}
+  const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xe6c88d,size:.035,transparent:true,opacity:.55,depthWrite:false}));scene.add(dust);
+
+  function resize(){
+    const w=stick.clientWidth,h=stick.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
+    const visH=2*L*Math.tan(FOV*Math.PI/360),visW=visH*cam.aspect;
+    PH=Math.max(visH,visW/1.6)*1.04;PW=PH*1.6;
+    planes.forEach(d=>{d.position.x=-PW/2;[d.userData.face,d.userData.backside].forEach(m=>{m.scale.set(PW,PH,1);m.position.x=PW/2;});});buildHall();
+  }
+  addEventListener('resize',resize);resize();
+
+  let mx=0,my=0,tx=0,ty=0;
+  addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;},{passive:true});
+  const ss=(a,b,x)=>{x=Math.min(1,Math.max(0,(x-a)/(b-a)));return x*x*(3-2*x);};
+  let visible=true,shown=0;
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)requestAnimationFrame(loop);}).observe(stick);
+  const clock=new THREE.Clock();
+  function loop(){
+    if(!visible)return;
+    const dt=Math.min(clock.getDelta(),.05),time=clock.elapsedTime;
+    shown+=(storyF-shown)*(reduce?1:Math.min(1,dt*6));
+    const cur=Math.min(N-1,Math.floor(shown)),frac=shown-cur,open=ss(.2,.7,frac),fly=ss(.42,1,frac);
+    const camZ=-cur*D+L-fly*D;
+    mx+=(tx-mx)*Math.min(1,dt*3);my+=(ty-my)*Math.min(1,dt*3);
+    const sway=reduce?0:1;
+    cam.position.set(mx*.5*sway,(-my*.3+Math.sin(time*.6)*.04)*sway,camZ);
+    cam.lookAt(mx*.15*sway,0,camZ-10);
+    cam.rotation.z+=Math.sin(fly*Math.PI)*.02*sway;
+    lamp.position.set(cam.position.x,cam.position.y+1.2,camZ-1);
+    planes.forEach((d,j)=>{
+      const o=j<cur?1:j===cur?open:0;
+      d.rotation.y=o*1.72+(j>cur?.03:0);
+      d.visible=camZ-d.position.z>-PW-2;
+    });
+    if(!reduce){const a=pg.attributes.position.array;for(let i=0;i<PN;i++){a[i*3+1]+=dt*.06;if(a[i*3+1]>4)a[i*3+1]=-3;}pg.attributes.position.needsUpdate=true;}
+    r.render(scene,cam);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* hero: Ryan follows the cursor slightly */
+const ryanImg=document.querySelector('.ryan img');
+if(ryanImg&&!reduce)addEventListener('pointermove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;ryanImg.style.transform=`translate(${x*-14}px,${y*-8}px)`;},{passive:true});
+
+const toast=document.getElementById('toast');let tt;
+function showToast(m){toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toast.hidden=true,1600);}
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+  const v=b.getAttribute('data-copy');
+  const pr=navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(v):Promise.reject();
+  pr.then(()=>showToast('Copied '+v)).catch(()=>showToast('Select and copy: '+v));
+}));
+})();
+</script>
+
+<dialog class="quote" id="quoteDlg" aria-labelledby="qTitle">
+  <div class="qhead">
+    <div style="display:grid;gap:8px">
+      <div class="eyebrow">Quote request</div>
+      <h2 id="qTitle">Tell Ryan about your project</h2>
+    </div>
+    <button class="qclose" type="button" data-close aria-label="Close">&times;</button>
+  </div>
+  <form class="qform" id="quoteForm" novalidate>
+    <div class="f"><label for="q_name">Your name *</label><input id="q_name" name="name" autocomplete="name" required maxlength="80"></div>
+    <div class="f"><label for="q_phone">Phone *</label><input id="q_phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="(281) 555-0123"></div>
+    <div class="f"><label for="q_email">Email</label><input id="q_email" name="email" type="email" autocomplete="email" maxlength="120"></div>
+    <div class="f"><label for="q_loc">City or ZIP</label><input id="q_loc" name="location" autocomplete="postal-code" maxlength="80" placeholder="Houston, 77002"></div>
+    <div class="f"><label for="q_service">Service *</label>
+      <select id="q_service" name="service" required>
+        <option value="">Choose a service</option>
+        <option>Painting</option><option>Flooring</option><option>Kitchen Installation</option><option>Bathroom Renovations</option><option>Door &amp; Windows</option><option>Home Assembly Services</option><option>Something else</option>
+      </select></div>
+    <div class="f"><label for="q_time">When do you want to start?</label>
+      <select id="q_time" name="timeline"><option>As soon as possible</option><option>Within a month</option><option>In 1-3 months</option><option>Just getting prices</option></select></div>
+    <div class="f full"><fieldset><legend>Best way to reach you</legend>
+      <label class="chip"><input type="radio" name="contact_pref" value="Call" checked><span>Call</span></label>
+      <label class="chip"><input type="radio" name="contact_pref" value="Text"><span>Text</span></label>
+      <label class="chip"><input type="radio" name="contact_pref" value="Email"><span>Email</span></label>
+    </fieldset></div>
+    <div class="f full"><label for="q_details">Project details *</label><textarea id="q_details" name="details" required maxlength="2000" placeholder="What needs to be done, rough size of the space, anything Ryan should know."></textarea></div>
+    <div class="hp" aria-hidden="true"><label for="q_web">Website</label><input id="q_web" name="website" tabindex="-1" autocomplete="off"></div>
+    <p class="qerr full" id="qErr" role="alert" hidden></p>
+    <div class="qfoot full"><small>Prefer to talk? Call (281) 282-7982</small><button class="btn solid" type="submit" id="qSubmit">Send request</button></div>
+  </form>
+  <div class="qdone" id="qDone" hidden>
+    <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></div>
+    <h2 style="font-size:30px">Request received</h2>
+    <p id="qDoneMsg">Thanks. Ryan will review your project and reach out soon.</p>
+    <div class="cta"><button class="btn ghost" type="button" data-close>Close</button></div>
+  </div>
+</dialog>
+<script>
+(function(){
+  const dlg=document.getElementById('quoteDlg'),form=document.getElementById('quoteForm'),err=document.getElementById('qErr'),done=document.getElementById('qDone'),sub=document.getElementById('qSubmit');
+  function open(service){
+    form.hidden=false;done.hidden=true;err.hidden=true;
+    if(service){const sel=form.elements.service;for(const o of sel.options){if(o.value===service){sel.value=o.value;}}}
+    if(typeof dlg.showModal==='function'){if(!dlg.open)dlg.showModal();}else dlg.setAttribute('open','');
+    setTimeout(()=>form.elements.name.focus(),50);
+  }
+  document.querySelectorAll('[data-quote]').forEach(b=>b.addEventListener('click',()=>open(b.getAttribute('data-service'))));
+  dlg.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>dlg.close()));
+  dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+  if(location.hash==='#quote')open();
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();err.hidden=true;
+    const d=Object.fromEntries(new FormData(form).entries());
+    const miss=[];
+    if(!String(d.name||'').trim())miss.push('your name');
+    if(String(d.phone||'').replace(/\D/g,'').length<7)miss.push('a phone number');
+    if(!d.service)miss.push('a service');
+    if(String(d.details||'').trim().length<5)miss.push('a few project details');
+    if(d.email&&!/^\S+@\S+\.\S+$/.test(d.email))miss.push('a valid email');
+    if(miss.length){err.textContent='Please add '+miss.join(', ')+'.';err.hidden=false;return;}
+    sub.disabled=true;sub.textContent='Sending...';
+    try{
+      const r=await fetch('/api/quote',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok||!j.ok)throw new Error(j.error||'We could not send your request. Please call or text (281) 282-7982.');
+      const first=String(d.name).trim().split(/\s+/)[0];
+      form.reset();form.hidden=true;done.hidden=false;
+      document.getElementById('qDoneMsg').textContent='Thanks, '+first+'. Ryan will review your project and reach out by '+String(d.contact_pref||'Call').toLowerCase()+' soon.';
+    }catch(ex){err.textContent=ex.message||'Something went wrong. Please call or text (281) 282-7982.';err.hidden=false;}
+    finally{sub.disabled=false;sub.textContent='Send request';}
+  });
+})();
+</script>
+</body>
+</html>
