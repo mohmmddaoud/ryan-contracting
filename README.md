@@ -21,9 +21,9 @@ Runs as one **Cloudflare Worker** (free plan). Pages and photos are in `public/`
    - Wait until Cloudflare says the domain is **Active** (usually under an hour, sometimes up to a day).
    - Workers & Pages → `rayyan-contracting` → Settings → **Domains & Routes** → Add → Custom domain → `rayyancontracting.com`. Repeat for `www.rayyancontracting.com`.
 
-3. **Admin password**
-   The admin panel starts with the password you were given privately. To change it:
-   Workers & Pages → `rayyan-contracting` → Settings → **Variables and Secrets** → Add → type *Secret* → name `ADMIN_PASSWORD` → your new password → Deploy.
+3. **Admin sign-in**
+   The admin panel signs in with the email `ryancontracting47@gmail.com` and the password you set privately (only a salted hash of it is in the code). To change them:
+   Workers & Pages → `rayyan-contracting` → Settings → **Variables and Secrets** → Add → type *Secret* → name `ADMIN_PASSWORD` → your new password → Deploy. For a different email, add a *Text* variable named `ADMIN_EMAIL`.
 
 ## Day to day
 

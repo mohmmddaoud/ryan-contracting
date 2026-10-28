@@ -235,7 +235,8 @@ a.adghost{text-decoration:none;display:block}
     <img src="/mark.webp" alt="" width="44">
     <div class="eyebrow">Ryan Contracting · Admin</div>
     <h1>Sign in</h1>
-    <p>Enter your admin password to see quote requests from your website.</p>
+    <p>Sign in with your admin email and password to see quote requests from your website.</p>
+    <div class="f"><label for="em">Email</label><input id="em" type="email" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false" required></div>
     <div class="f"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
     <p class="qerr" id="loginErr" hidden></p>
     <button class="btn solid" type="submit" id="loginBtn">Sign in</button>
@@ -337,12 +338,12 @@ a.adghost{text-decoration:none;display:block}
     const j=await r.json().catch(()=>({}));if(!r.ok||j.ok===false)throw new Error(j.error||'Request failed');return j;
   }
   async function load(){try{const j=await api('GET');rows=j.quotes||[];showApp();renderAll();}catch(e){if(e.message!=='signed out')toast(e.message);}}
-  function showLogin(){$('loginView').hidden=false;$('adminPanel').hidden=true;clearInterval(timer);setTimeout(()=>$('pw').focus(),30);}
+  function showLogin(){$('loginView').hidden=false;$('adminPanel').hidden=true;clearInterval(timer);setTimeout(()=>($('em').value?$('pw'):$('em')).focus(),30);}
   function showApp(){if(!$('adminPanel').hidden)return;$('loginView').hidden=true;$('adminPanel').hidden=false;clearInterval(timer);timer=setInterval(()=>{if(!document.hidden)load();},30000);}
 
   $('loginForm').addEventListener('submit',async e=>{
     e.preventDefault();$('loginErr').hidden=true;$('loginBtn').disabled=true;
-    try{const r=await fetch('/api/admin/login',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({password:$('pw').value})});
+    try{const r=await fetch('/api/admin/login',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({email:$('em').value,password:$('pw').value})});
       const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'Sign in failed');$('pw').value='';await load();}
     catch(err){$('loginErr').textContent=err.message;$('loginErr').hidden=false;}
     finally{$('loginBtn').disabled=false;}

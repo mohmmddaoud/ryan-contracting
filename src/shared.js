@@ -1,4 +1,4 @@
-// Shared helpers for the Pages Functions. Bindings: DB (D1), ADMIN_PASSWORD (secret).
+// Shared helpers for the Worker routes. Bindings: DB (D1); optional ADMIN_EMAIL (variable), ADMIN_PASSWORD (secret).
 export const STATUSES = ["new", "contacted", "scheduled", "won", "closed"];
 export const SERVICES = ["Painting", "Flooring", "Kitchen Installation", "Bathroom Renovations", "Door & Windows", "Home Assembly Services", "Something else"];
 const COOKIE = "rc_admin";
@@ -42,13 +42,25 @@ export async function requireDb(env) {
   await schemaReady;
   return env.DB;
 }
-// sha256 of the starting admin password (the plain password is not stored here).
-// Setting an ADMIN_PASSWORD secret in Cloudflare replaces it.
-const DEFAULT_PASSWORD_SHA256 = "d654bca3810aba4a80adc9037052bcb2d0a204c1c7480c73f2786b50f42c5908";
-export async function checkPassword(env, pw) {
-  const hashed = await sha256Hex(pw);
-  if (env.ADMIN_PASSWORD) return safeEqual(hashed, await sha256Hex(env.ADMIN_PASSWORD));
-  return safeEqual(hashed, DEFAULT_PASSWORD_SHA256);
+// Admin sign-in: email + password. The password itself is not stored here, only a
+// salted PBKDF2-SHA256 hash of it. An ADMIN_EMAIL variable or ADMIN_PASSWORD secret
+// set in Cloudflare replaces these defaults.
+const ADMIN_EMAIL = "ryancontracting47@gmail.com";
+const PASSWORD_SALT = "f748936c3cfad6e923a6b696245d003e";
+const PASSWORD_PBKDF2 = "628b64c139b8f892eee9cbac034405e9b6e22ae3c2752c714d126a3e7a2bef52";
+async function pbkdf2Hex(pw, saltHex) {
+  const salt = new Uint8Array(saltHex.match(/../g).map((h) => parseInt(h, 16)));
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt, iterations: 100000 }, key, 256);
+  return [...new Uint8Array(bits)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+export async function checkLogin(env, email, pw) {
+  const wantEmail = String(env.ADMIN_EMAIL || ADMIN_EMAIL).trim().toLowerCase();
+  const emailOk = safeEqual(await sha256Hex(String(email).trim().toLowerCase()), await sha256Hex(wantEmail));
+  const pwOk = env.ADMIN_PASSWORD
+    ? safeEqual(await sha256Hex(pw), await sha256Hex(env.ADMIN_PASSWORD))
+    : safeEqual(await pbkdf2Hex(pw, PASSWORD_SALT), PASSWORD_PBKDF2);
+  return emailOk && pwOk;
 }
 function readCookie(request, name) {
   for (const part of (request.headers.get("cookie") || "").split(";")) {
